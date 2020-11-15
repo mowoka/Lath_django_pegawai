@@ -1,0 +1,57 @@
+{% include 'coreApp/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card card-body">
+                    <table class="table table-sm">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>NIP</td>
+                            <td>{{pegawai.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td>Nama</td>
+                            <td>{{pegawai.nama}}</td>
+                        </tr>
+                        <tr>
+                            <td>Kode Jabatan</td>
+                            <td>{{pegawai.kd_jabatan}}</td>
+                        </tr>
+                        <tr>
+                            <td>Kode Pendidikan</td>
+                            <td>{{pegawai.kd_pendidikan}}</td>
+                        </tr>
+                        <tr>
+                            <td>Golongan</td>
+                            <td>{{pegawai.golongan}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card card-body">
+                    <h5 style="text-align: center;">Are you sure ??</h5>
+                    <form method="POST" action="{% url 'pegawai-delete' pegawai.id %}">
+                        {% csrf_token %}
+                        <a style="float: right;" class="btn btn-warning" href="{% url 'pegawai' %}">Cancel</a>
+                        <input class="btn btn-danger" type="submit" value="Confirm">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

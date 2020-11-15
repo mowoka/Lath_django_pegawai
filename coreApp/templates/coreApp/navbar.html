@@ -1,0 +1,36 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'home' %}">
+    <img src="{% static 'images/Logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+    Sistem Informasi Pegawai
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="mr-auto"></div>
+      <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}"><strong>Home</strong><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'pegawai' %}"><strong>Data Pegawai</strong><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'pendidikan' %}"><strong>Data Pendidikan</strong><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'jabatan' %}"><strong>Data Jabatan</strong><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <strong>Hello , {{request.user}}</strong><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'logout' %}"><strong>Logout</strong><span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+
+    </div>
+</nav>

@@ -1,0 +1,57 @@
+{% include 'coreApp/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card card-body">
+                    <table class="table table-sm">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Kode jabatan</td>
+                            <td>{{jabatan.kd_jabatan}}</td>
+                        </tr>
+                        <tr>
+                            <td>Jabatan</td>
+                            <td>{{jabatan.jabatan}}</td>
+                        </tr>
+                        <tr>
+                            <td>TMT Jabatan</td>
+                            <td>{{jabatan.tmt_jabatan}}</td>
+                        </tr>
+                        <tr>
+                            <td>Masa kerja (Tahun)</td>
+                            <td>{{jabatan.mk_tahun}}</td>
+                        </tr>
+                        <tr>
+                            <td>Masa Kerja (Bulan)</td>
+                            <td>{{jabatan.mk_bulan}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card card-body">
+                    <h5 style="text-align: center;">Are you sure ??</h5>
+                    <form method="POST" action="{% url 'jabatan-delete' jabatan.id %}">
+                        {% csrf_token %}
+                        <a style="float: right;" class="btn btn-warning" href="{% url 'jabatan' %}">Cancel</a>
+                        <input class="btn btn-danger" type="submit" value="Confirm">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

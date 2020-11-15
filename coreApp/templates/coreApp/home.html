@@ -1,0 +1,33 @@
+{% include 'coreApp/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="text-align: center;"><strong>Sistem Informasi Pegawai</strong></h3>
+                    <h6 style="text-align: center;">Silahkan Pilih Menu : </h6>
+                    <br>
+                    <br>
+                    <table class="table table-md">
+                        <tr>
+                            <th><a class="btn btn-primary" href="{% url 'pegawai' %}">Data Kepegawaian</a></th>
+                            <th><a class="btn btn-success" href="{% url 'pendidikan' %}">Data Pendidikan</a></th>
+                            <th><a class="btn btn-info" href="{% url 'jabatan' %}">Data Jabatan</a></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

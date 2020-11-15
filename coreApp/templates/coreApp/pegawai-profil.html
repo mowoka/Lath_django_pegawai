@@ -1,0 +1,65 @@
+{% include 'coreApp/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-brody">
+                    <h4 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Profile Pegawai</h4>
+                    <br>
+                    <table class="table table-sm">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>NIP</td>
+                            <td>{{pegawai.nip}}</td>
+                        </tr>
+                        <tr>
+                            <td>Nama</td>
+                            <td>{{pegawai.nama}}</td>
+                        </tr>
+                        <tr>
+                            <td>Kode Jabatan</td>
+                            <td>{{pegawai.kd_jabatan}}</td>
+                        </tr>
+                        <tr>
+                            <td>Kode Pendidikan</td>
+                            <td>{{pegawai.kd_pendidikan}}</td>
+                        </tr>
+                        <tr>
+                            <td>Golongan</td>
+                            <td>{{pegawai.golongan}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tempat Lahir</td>
+                            <td>{{pegawai.tempat_lahir}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tanggla Lahir</td>
+                            <td>{{pegawai.tgl_lahir}}</td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Kelamin</td>
+                            <td>{{pegawai.jenis_kelamin}}</td>
+                        </tr>
+                        <tr>
+                            <td>Status Perkawinan</td>
+                            <td>{{pegawai.status}}</td>
+                        </tr>
+                        <tr>
+                            <td>Agama</td>
+                            <td>{{pegawai.agama}}</td>
+                        </tr>
+                    </table>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

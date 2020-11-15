@@ -1,0 +1,66 @@
+{% include 'coreApp/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center;"><strong>Total Data Pendidikan</strong></h5>
+                    <hr>
+                    <h3 style="text-align: center;">{{total_pendidikan}}</h3>
+                    <hr>
+                    <a class="btn btn-primary btn-block" href="{% url 'pendidikan-input' %}">Input Data Pendidikan</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center;"><strong>Action</strong></h5>
+                    <hr>
+                    <form method="GET" action="">
+                        {{myFilter.form}}
+                        <button class="btn btn-success" type="submit">SEARCH</button>
+                    </form>        
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center;"><strong>Daftar Data Pendidikan</strong></h5>
+                    <table class="table table-sm">
+                        <tr>
+                            <th>Kode Pendidikan</th>
+                            <th>Nama Pendidikan</th>
+                            <th>Jurusan</th>
+                            <th>Tingkat Pendidikan</th>
+                            <th>Tahun Lulus</th>
+                            <th></th>
+                        </tr>
+                        {% for pendidikan in pendidikans %}
+                        <tr>
+                            <td>{{pendidikan.kd_pendidikan}}</td>
+                            <td>{{pendidikan.nama_pendidikan}}</td>
+                            <td>{{pendidikan.jurusan}}</td>
+                            <td>{{pendidikan.tingkat_pendidikan}}</td>
+                            <td>{{pendidikan.tahun_lulus}}</td>
+                            <td><a class="btn btn-danger" href="{% url 'pendidikan-delete' pendidikan.id %}">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

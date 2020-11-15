@@ -1,0 +1,48 @@
+{% include 'coreApp/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <table class="table table-sm">
+                            <h5 style="text-align: center;"><strong>Isi Table Dibawah Ini :</strong></h5>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Kode jabatan</td>
+                                <td>{{form.kd_jabatan}}</td>
+                            </tr>
+                            <tr>
+                                <td>Jabatan</td>
+                                <td>{{form.jabatan}}</td>
+                            </tr>
+                            <tr>
+                                <td>TMT Jabatan</td>
+                                <td>{{form.tmt_jabatan}}</td>
+                            </tr>
+                            <tr>
+                                <td>Masa Kerja (Tahun)</td>
+                                <td>{{form.mk_tahun}}</td>
+                            </tr>
+                            <tr>
+                                <td>Masa Kerja (Bulan)</td>
+                                <td>{{form.mk_bulan}}</td>
+                            </tr>
+                        </table>
+                        
+                        <input type="submit" value="Save" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

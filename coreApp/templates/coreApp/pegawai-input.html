@@ -1,0 +1,68 @@
+{% include 'coreApp/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <table class="table table-sm">
+                            <h5 style="text-align: center;"><strong>Isi Table Dibawah Ini :</strong></h5>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>NIP</td>
+                                <td>{{form.nip}}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>{{form.nama}}</td>
+                            </tr>
+                            <tr>
+                                <td>Kode Jabatan</td>
+                                <td>{{form.kd_jabatan}}</td>
+                            </tr>
+                            <tr>
+                                <td>Kode Pendidikan</td>
+                                <td>{{form.kd_pendidikan}}</td>
+                            </tr>
+                            <tr>
+                                <td>Gologan</td>
+                                <td>{{form.golongan}}</td>
+                            </tr>
+                            <tr>
+                                <td>Tempat Lahir</td>
+                                <td>{{form.tempat_lahir}}</td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Lahir</td>
+                                <td>{{form.tgl_lahir}}</td>
+                            </tr>
+                            <tr>
+                                <td>Jenis Kelamin</td>
+                                <td>{{form.jenis_kelamin}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{form.status}}</td>
+                            </tr>
+                            <tr>
+                                <td>Agama</td>
+                                <td>{{form.agama}}</td>
+                            </tr>
+                        </table>
+                        
+                        <input type="submit" value="Save" class="btn btn-primary btn-sm btn-block">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

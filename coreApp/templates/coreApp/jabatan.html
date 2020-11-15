@@ -1,0 +1,66 @@
+{% include 'coreApp/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center;"><strong>Total Data Jabatan</strong></h5>
+                    <hr>
+                    <h3 style="text-align: center;">{{total_jabatan}}</h3>
+                    <hr>
+                    <a class="btn btn-primary btn-block" href="{% url 'jabatan-input' %}">Input Jabatan</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center;"><strong>Action</strong></h5>
+                    <hr>
+                    <form method="GET" action="">
+                            {{myFilter.form}}
+                        <button class="btn btn-success" type="submit">SEARCH</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center;"><strong>Daftar Data Jabatan</strong></h5>
+                    <table class="table table-sm">
+                        <tr>
+                            <th>Kode Jabatan</th>
+                            <th>Jabatan</th>
+                            <th>TMT Jabatan</th>
+                            <th>Masa kerja (Tahun)</th>
+                            <th>Masa kerja (Bulan)</th>
+                            <th></th>
+                        </tr>
+                        {% for jabatan in jabatans %}
+                        <tr>
+                            <td>{{jabatan.kd_jabatan}}</td>
+                            <td>{{jabatan.jabatan}}</td>
+                            <td>{{jabatan.tmt_jabatan}}</td>
+                            <td>{{jabatan.mk_tahun}}</td>
+                            <td>{{jabatan.mk_bulan}}</td>
+                            <td><a class="btn btn-danger" href="{% url 'jabatan-delete' jabatan.id %}">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
